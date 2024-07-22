@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BODEGA EL MILAGRO</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <div class="logo">BODEGA EL MILAGRO</div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#home">INICIO</a></li>
+                <li><a href="#about">ACERCA DE</a></li>
+                <li><a href="#products">OFRECEMOS</a></li>
+                <li><a href="#contact">CONTACTO</a></li>
+                <li><a href="#gallery">GALERÍA</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h1>BIENVENIDOS A BODEGA EL MILAGRO</h1>
+        <p>¡Descubre todo lo que tenemos para ti!</p>
+    </section>
+
+    <section id="about">
+        <h2>SOBRE NOSOTROS</h2>
+        <p>Somos una tienda dedicada a ofrecer productos de alta calidad para el hogar, regalos especiales y ropa para toda la familia. Nuestro objetivo es brindarte una experiencia de compra única y satisfactoria.</p>
+    </section>
+
+    <section id="products">
+        <h2>OFRECEMOS:</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/hogar.jpg" alt="Producto del hogar">
+                <h3>PRODUCTOS DEL HOGAR</h3>
+                <p>Descripción breve del producto del hogar.</p>
+            </div>
+            <div class="product">
+                <img src="images/regalos1.jpg" alt="Regalo especial">
+                <h3>REGALOS ESPECIALES</h3>
+                <p>Descripción breve del regalo especial.</p>
+            </div>
+            <div class="product">
+                <img src="images/todaocacion.jpg" alt="Regalos para toda ocacion">
+                <h3>REGALOS PARA TODA OCACION</h3>
+                <p>Descripción breve de la ropa.</p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>GALERÍA</h2>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="images/hogar.jpg" alt="Imagen 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/regalos1.jpg" alt="Imagen 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/todaocacion.jpg" alt="Imagen 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/galeria1.jpg" alt="Imagen 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/galeria2.jpg" alt="Imagen 5">
+                </div>
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contacto</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p>Para más información, contáctanos a través del correo electrónico o nuestras redes sociales.</p>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> Email: info@tiendadehogar.com</li>
+                    <li><i class="fas fa-phone"></i> Teléfono: +51 123 456 789</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle Ejemplo 123, Piura, Perú</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d417.88518308986556!2d-80.26829433138441!3d-4.835769559639961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x90358586bf490edf%3A0x482458d92a9fb437!2sBodega%20El%20Milagro!5e0!3m2!1ses-419!2spe!4v1721678836784!5m2!1ses-419!2spe" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BODEGA EL MILAGRO. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+        const slides = document.querySelectorAll('.carousel-slide');
+        let index = 0;
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        function showSlide(n) {
+            index = (n + slides.length) % slides.length;
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[index].style.display = 'block';
+        }
+
+        prev.addEventListener('click', () => {
+            showSlide(index - 1);
+        });
+
+        next.addEventListener('click', () => {
+            showSlide(index + 1);
+        });
+
+        showSlide(index);
+    </script>
+</body>
+</html>
+
